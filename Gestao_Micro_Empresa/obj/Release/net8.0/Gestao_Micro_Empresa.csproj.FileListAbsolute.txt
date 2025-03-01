@@ -1,0 +1,15 @@
+D:\Curso C# Essencial\Gestao_Micro_Empresa\Gestao_Micro_Empresa\bin\Release\net8.0\Gestao_Micro_Empresa.exe
+D:\Curso C# Essencial\Gestao_Micro_Empresa\Gestao_Micro_Empresa\bin\Release\net8.0\Gestao_Micro_Empresa.deps.json
+D:\Curso C# Essencial\Gestao_Micro_Empresa\Gestao_Micro_Empresa\bin\Release\net8.0\Gestao_Micro_Empresa.runtimeconfig.json
+D:\Curso C# Essencial\Gestao_Micro_Empresa\Gestao_Micro_Empresa\bin\Release\net8.0\Gestao_Micro_Empresa.dll
+D:\Curso C# Essencial\Gestao_Micro_Empresa\Gestao_Micro_Empresa\bin\Release\net8.0\Gestao_Micro_Empresa.pdb
+D:\Curso C# Essencial\Gestao_Micro_Empresa\Gestao_Micro_Empresa\obj\Release\net8.0\Gestao_Micro_Empresa.GeneratedMSBuildEditorConfig.editorconfig
+D:\Curso C# Essencial\Gestao_Micro_Empresa\Gestao_Micro_Empresa\obj\Release\net8.0\Gestao_Micro_Empresa.AssemblyInfoInputs.cache
+D:\Curso C# Essencial\Gestao_Micro_Empresa\Gestao_Micro_Empresa\obj\Release\net8.0\Gestao_Micro_Empresa.AssemblyInfo.cs
+D:\Curso C# Essencial\Gestao_Micro_Empresa\Gestao_Micro_Empresa\obj\Release\net8.0\Gestao_Micro_Empresa.csproj.CoreCompileInputs.cache
+D:\Curso C# Essencial\Gestao_Micro_Empresa\Gestao_Micro_Empresa\obj\Release\net8.0\Gestao_Micro_Empresa.sourcelink.json
+D:\Curso C# Essencial\Gestao_Micro_Empresa\Gestao_Micro_Empresa\obj\Release\net8.0\Gestao_Micro_Empresa.dll
+D:\Curso C# Essencial\Gestao_Micro_Empresa\Gestao_Micro_Empresa\obj\Release\net8.0\refint\Gestao_Micro_Empresa.dll
+D:\Curso C# Essencial\Gestao_Micro_Empresa\Gestao_Micro_Empresa\obj\Release\net8.0\Gestao_Micro_Empresa.pdb
+D:\Curso C# Essencial\Gestao_Micro_Empresa\Gestao_Micro_Empresa\obj\Release\net8.0\Gestao_Micro_Empresa.genruntimeconfig.cache
+D:\Curso C# Essencial\Gestao_Micro_Empresa\Gestao_Micro_Empresa\obj\Release\net8.0\ref\Gestao_Micro_Empresa.dll

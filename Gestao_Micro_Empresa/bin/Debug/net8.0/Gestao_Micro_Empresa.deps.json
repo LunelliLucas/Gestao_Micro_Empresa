@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Gestao_Micro_Empresa/1.0.0": {
+        "runtime": {
+          "Gestao_Micro_Empresa.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Gestao_Micro_Empresa/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
