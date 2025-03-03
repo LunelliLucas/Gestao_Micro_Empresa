@@ -1,7 +1,48 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Curso C# Essencial\\Gestao_Micro_Empresa\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Curso C# Essencial\\LunelliLucas\\Gestao_Micro_Empresa\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E385E5B7-CEED-4758-8ED8-D777D341ADC3}|Gestao_Micro_Empresa\\Gestao_Micro_Empresa.csproj|c:\\curso c# essencial\\lunellilucas\\gestao_micro_empresa\\gestao_micro_empresa\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E385E5B7-CEED-4758-8ED8-D777D341ADC3}|Gestao_Micro_Empresa\\Gestao_Micro_Empresa.csproj|solutionrelative:gestao_micro_empresa\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E385E5B7-CEED-4758-8ED8-D777D341ADC3}|Gestao_Micro_Empresa\\Gestao_Micro_Empresa.csproj|c:\\curso c# essencial\\lunellilucas\\gestao_micro_empresa\\gestao_micro_empresa\\submenus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E385E5B7-CEED-4758-8ED8-D777D341ADC3}|Gestao_Micro_Empresa\\Gestao_Micro_Empresa.csproj|solutionrelative:gestao_micro_empresa\\submenus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E385E5B7-CEED-4758-8ED8-D777D341ADC3}|Gestao_Micro_Empresa\\Gestao_Micro_Empresa.csproj|c:\\curso c# essencial\\lunellilucas\\gestao_micro_empresa\\gestao_micro_empresa\\socio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E385E5B7-CEED-4758-8ED8-D777D341ADC3}|Gestao_Micro_Empresa\\Gestao_Micro_Empresa.csproj|solutionrelative:gestao_micro_empresa\\socio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E385E5B7-CEED-4758-8ED8-D777D341ADC3}|Gestao_Micro_Empresa\\Gestao_Micro_Empresa.csproj|c:\\curso c# essencial\\lunellilucas\\gestao_micro_empresa\\gestao_micro_empresa\\pessoa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E385E5B7-CEED-4758-8ED8-D777D341ADC3}|Gestao_Micro_Empresa\\Gestao_Micro_Empresa.csproj|solutionrelative:gestao_micro_empresa\\pessoa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E385E5B7-CEED-4758-8ED8-D777D341ADC3}|Gestao_Micro_Empresa\\Gestao_Micro_Empresa.csproj|c:\\curso c# essencial\\lunellilucas\\gestao_micro_empresa\\gestao_micro_empresa\\icadastros.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E385E5B7-CEED-4758-8ED8-D777D341ADC3}|Gestao_Micro_Empresa\\Gestao_Micro_Empresa.csproj|solutionrelative:gestao_micro_empresa\\icadastros.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E385E5B7-CEED-4758-8ED8-D777D341ADC3}|Gestao_Micro_Empresa\\Gestao_Micro_Empresa.csproj|c:\\curso c# essencial\\lunellilucas\\gestao_micro_empresa\\gestao_micro_empresa\\funcionario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E385E5B7-CEED-4758-8ED8-D777D341ADC3}|Gestao_Micro_Empresa\\Gestao_Micro_Empresa.csproj|solutionrelative:gestao_micro_empresa\\funcionario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E385E5B7-CEED-4758-8ED8-D777D341ADC3}|Gestao_Micro_Empresa\\Gestao_Micro_Empresa.csproj|c:\\curso c# essencial\\lunellilucas\\gestao_micro_empresa\\gestao_micro_empresa\\fornecedor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E385E5B7-CEED-4758-8ED8-D777D341ADC3}|Gestao_Micro_Empresa\\Gestao_Micro_Empresa.csproj|solutionrelative:gestao_micro_empresa\\fornecedor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E385E5B7-CEED-4758-8ED8-D777D341ADC3}|Gestao_Micro_Empresa\\Gestao_Micro_Empresa.csproj|c:\\curso c# essencial\\lunellilucas\\gestao_micro_empresa\\gestao_micro_empresa\\fechamentomes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E385E5B7-CEED-4758-8ED8-D777D341ADC3}|Gestao_Micro_Empresa\\Gestao_Micro_Empresa.csproj|solutionrelative:gestao_micro_empresa\\fechamentomes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E385E5B7-CEED-4758-8ED8-D777D341ADC3}|Gestao_Micro_Empresa\\Gestao_Micro_Empresa.csproj|c:\\curso c# essencial\\lunellilucas\\gestao_micro_empresa\\gestao_micro_empresa\\despesa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E385E5B7-CEED-4758-8ED8-D777D341ADC3}|Gestao_Micro_Empresa\\Gestao_Micro_Empresa.csproj|solutionrelative:gestao_micro_empresa\\despesa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E385E5B7-CEED-4758-8ED8-D777D341ADC3}|Gestao_Micro_Empresa\\Gestao_Micro_Empresa.csproj|c:\\curso c# essencial\\lunellilucas\\gestao_micro_empresa\\gestao_micro_empresa\\despesa.adicional.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E385E5B7-CEED-4758-8ED8-D777D341ADC3}|Gestao_Micro_Empresa\\Gestao_Micro_Empresa.csproj|solutionrelative:gestao_micro_empresa\\despesa.adicional.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,15 +50,145 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 7,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SubMenus.cs",
+              "DocumentMoniker": "C:\\Curso C# Essencial\\LunelliLucas\\Gestao_Micro_Empresa\\Gestao_Micro_Empresa\\SubMenus.cs",
+              "RelativeDocumentMoniker": "Gestao_Micro_Empresa\\SubMenus.cs",
+              "ToolTip": "C:\\Curso C# Essencial\\LunelliLucas\\Gestao_Micro_Empresa\\Gestao_Micro_Empresa\\SubMenus.cs",
+              "RelativeToolTip": "Gestao_Micro_Empresa\\SubMenus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-03T23:23:31.22Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Socio.cs",
+              "DocumentMoniker": "C:\\Curso C# Essencial\\LunelliLucas\\Gestao_Micro_Empresa\\Gestao_Micro_Empresa\\Socio.cs",
+              "RelativeDocumentMoniker": "Gestao_Micro_Empresa\\Socio.cs",
+              "ToolTip": "C:\\Curso C# Essencial\\LunelliLucas\\Gestao_Micro_Empresa\\Gestao_Micro_Empresa\\Socio.cs",
+              "RelativeToolTip": "Gestao_Micro_Empresa\\Socio.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-03T23:23:28.723Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Pessoa.cs",
+              "DocumentMoniker": "C:\\Curso C# Essencial\\LunelliLucas\\Gestao_Micro_Empresa\\Gestao_Micro_Empresa\\Pessoa.cs",
+              "RelativeDocumentMoniker": "Gestao_Micro_Empresa\\Pessoa.cs",
+              "ToolTip": "C:\\Curso C# Essencial\\LunelliLucas\\Gestao_Micro_Empresa\\Gestao_Micro_Empresa\\Pessoa.cs",
+              "RelativeToolTip": "Gestao_Micro_Empresa\\Pessoa.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-03T23:23:23.235Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Fornecedor.cs",
+              "DocumentMoniker": "C:\\Curso C# Essencial\\LunelliLucas\\Gestao_Micro_Empresa\\Gestao_Micro_Empresa\\Fornecedor.cs",
+              "RelativeDocumentMoniker": "Gestao_Micro_Empresa\\Fornecedor.cs",
+              "ToolTip": "C:\\Curso C# Essencial\\LunelliLucas\\Gestao_Micro_Empresa\\Gestao_Micro_Empresa\\Fornecedor.cs",
+              "RelativeToolTip": "Gestao_Micro_Empresa\\Fornecedor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-03T23:23:15.957Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "FechamentoMes.cs",
+              "DocumentMoniker": "C:\\Curso C# Essencial\\LunelliLucas\\Gestao_Micro_Empresa\\Gestao_Micro_Empresa\\FechamentoMes.cs",
+              "RelativeDocumentMoniker": "Gestao_Micro_Empresa\\FechamentoMes.cs",
+              "ToolTip": "C:\\Curso C# Essencial\\LunelliLucas\\Gestao_Micro_Empresa\\Gestao_Micro_Empresa\\FechamentoMes.cs",
+              "RelativeToolTip": "Gestao_Micro_Empresa\\FechamentoMes.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-03T23:23:13.911Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Despesa.cs",
+              "DocumentMoniker": "C:\\Curso C# Essencial\\LunelliLucas\\Gestao_Micro_Empresa\\Gestao_Micro_Empresa\\Despesa.cs",
+              "RelativeDocumentMoniker": "Gestao_Micro_Empresa\\Despesa.cs",
+              "ToolTip": "C:\\Curso C# Essencial\\LunelliLucas\\Gestao_Micro_Empresa\\Gestao_Micro_Empresa\\Despesa.cs",
+              "RelativeToolTip": "Gestao_Micro_Empresa\\Despesa.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-03T23:23:11.616Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Despesa.Adicional.cs",
+              "DocumentMoniker": "C:\\Curso C# Essencial\\LunelliLucas\\Gestao_Micro_Empresa\\Gestao_Micro_Empresa\\Despesa.Adicional.cs",
+              "RelativeDocumentMoniker": "Gestao_Micro_Empresa\\Despesa.Adicional.cs",
+              "ToolTip": "C:\\Curso C# Essencial\\LunelliLucas\\Gestao_Micro_Empresa\\Gestao_Micro_Empresa\\Despesa.Adicional.cs",
+              "RelativeToolTip": "Gestao_Micro_Empresa\\Despesa.Adicional.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-03T23:23:09.371Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Curso C# Essencial\\LunelliLucas\\Gestao_Micro_Empresa\\Gestao_Micro_Empresa\\Program.cs",
+              "RelativeDocumentMoniker": "Gestao_Micro_Empresa\\Program.cs",
+              "ToolTip": "C:\\Curso C# Essencial\\LunelliLucas\\Gestao_Micro_Empresa\\Gestao_Micro_Empresa\\Program.cs",
+              "RelativeToolTip": "Gestao_Micro_Empresa\\Program.cs",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAAAGUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-03T23:23:05.224Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Funcionario.cs",
+              "DocumentMoniker": "C:\\Curso C# Essencial\\LunelliLucas\\Gestao_Micro_Empresa\\Gestao_Micro_Empresa\\Funcionario.cs",
+              "RelativeDocumentMoniker": "Gestao_Micro_Empresa\\Funcionario.cs",
+              "ToolTip": "C:\\Curso C# Essencial\\LunelliLucas\\Gestao_Micro_Empresa\\Gestao_Micro_Empresa\\Funcionario.cs",
+              "RelativeToolTip": "Gestao_Micro_Empresa\\Funcionario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-03T23:22:58.087Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ICadastros.cs",
+              "DocumentMoniker": "C:\\Curso C# Essencial\\LunelliLucas\\Gestao_Micro_Empresa\\Gestao_Micro_Empresa\\ICadastros.cs",
+              "RelativeDocumentMoniker": "Gestao_Micro_Empresa\\ICadastros.cs",
+              "ToolTip": "C:\\Curso C# Essencial\\LunelliLucas\\Gestao_Micro_Empresa\\Gestao_Micro_Empresa\\ICadastros.cs",
+              "RelativeToolTip": "Gestao_Micro_Empresa\\ICadastros.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-03T23:22:47.988Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             }
           ]
         }

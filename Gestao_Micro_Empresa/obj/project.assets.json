@@ -8,23 +8,23 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Lucas\\.nuget\\packages\\": {},
+    "C:\\Users\\Marcelo\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Curso C# Essencial\\Gestao_Micro_Empresa\\Gestao_Micro_Empresa\\Gestao_Micro_Empresa.csproj",
+      "projectUniqueName": "C:\\Curso C# Essencial\\LunelliLucas\\Gestao_Micro_Empresa\\Gestao_Micro_Empresa\\Gestao_Micro_Empresa.csproj",
       "projectName": "Gestao_Micro_Empresa",
-      "projectPath": "D:\\Curso C# Essencial\\Gestao_Micro_Empresa\\Gestao_Micro_Empresa\\Gestao_Micro_Empresa.csproj",
-      "packagesPath": "C:\\Users\\Lucas\\.nuget\\packages\\",
-      "outputPath": "D:\\Curso C# Essencial\\Gestao_Micro_Empresa\\Gestao_Micro_Empresa\\obj\\",
+      "projectPath": "C:\\Curso C# Essencial\\LunelliLucas\\Gestao_Micro_Empresa\\Gestao_Micro_Empresa\\Gestao_Micro_Empresa.csproj",
+      "packagesPath": "C:\\Users\\Marcelo\\.nuget\\packages\\",
+      "outputPath": "C:\\Curso C# Essencial\\LunelliLucas\\Gestao_Micro_Empresa\\Gestao_Micro_Empresa\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Marcelo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

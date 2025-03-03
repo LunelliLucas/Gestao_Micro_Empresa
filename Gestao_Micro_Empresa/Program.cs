@@ -96,7 +96,7 @@ while (true)
         }
         if (resp == 7)
         {
-            Console.WriteLine("Saindo..");
+            Console.WriteLine("Saindo...");
             await Task.Delay(1000);
             break;
         }

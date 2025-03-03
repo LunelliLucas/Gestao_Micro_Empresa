@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Gestao_Micro_Empresa
-build_property.ProjectDir = D:\Curso C# Essencial\Gestao_Micro_Empresa\Gestao_Micro_Empresa\
+build_property.ProjectDir = C:\Curso C# Essencial\LunelliLucas\Gestao_Micro_Empresa\Gestao_Micro_Empresa\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
