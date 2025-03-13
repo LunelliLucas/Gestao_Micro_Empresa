@@ -11,3 +11,5 @@ build_property.RootNamespace = Gestao_Micro_Empresa
 build_property.ProjectDir = C:\Curso C# Essencial\LunelliLucas\Gestao_Micro_Empresa\Gestao_Micro_Empresa\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 

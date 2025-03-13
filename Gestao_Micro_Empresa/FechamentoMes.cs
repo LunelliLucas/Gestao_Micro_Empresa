@@ -10,12 +10,13 @@ namespace Gestao_Micro_Empresa
     public class FechamentoMes
     {
         public FechamentoMes() { }
+        public static decimal Juros { get; set; }
         
         public static decimal AddReceitas(List<Fornecedor> fornec)
         {
             Console.WriteLine("Adicione o valor das Receitas à seguir: \n");
             Console.Write($"Informe o rendimento total de juros até {DateTime.Now.ToShortDateString()}: ");
-            decimal juros = Convert.ToDecimal(Console.ReadLine());
+            Juros = Convert.ToDecimal(Console.ReadLine());
             decimal totReceitas = 0;    
             if (fornec.Count != 0)
             {
@@ -26,7 +27,7 @@ namespace Gestao_Micro_Empresa
                     item.Receita = Convert.ToDecimal(Console.ReadLine());
                     totReceitas += item.Receita;
                 }
-                return totReceitas + juros;
+                return totReceitas + Juros;
             }
             else
             {
@@ -34,7 +35,7 @@ namespace Gestao_Micro_Empresa
                 Console.WriteLine("Pressione qualquer tecla para continuar...");
                 Console.ReadKey();
             }
-            return 0 + juros;
+            return 0 + Juros;
         }
         public static decimal AddDespesasFixas(List<Despesa> despesas)
         {
@@ -81,7 +82,7 @@ namespace Gestao_Micro_Empresa
             Console.WriteLine("\nPagamento funcionários:");
             foreach (var item in funcio)
             {
-                Console.WriteLine($"{item.Nome}: {item.Salario:C2}");
+                Console.WriteLine($"{item.Nome}: {item.Salario:C4}");
                 totPag += item.Salario;
             }
             return totPag;
@@ -135,32 +136,34 @@ namespace Gestao_Micro_Empresa
             ICadastros.Cabecalho("Resultados do mês");
             Console.WriteLine("-----------------------------------");
             Console.WriteLine("Receitas:\n");
+            Console.WriteLine($"Rendimento de Juros até {DateTime.Now.ToShortDateString()}: {Juros:C4}");
             foreach (var item in fornec)
             {
-                Console.WriteLine($"{item.Nome}: {item.Receita:C2}");
+                Console.WriteLine($"{item.Nome}: {item.Receita:C4}");
             }
+            Console.WriteLine($"Total: {receitas:C4}");
             Console.WriteLine("-----------------------------------");
             Console.WriteLine("Despesas Fixas:\n");
             foreach (var item in despesas)
             {
-                Console.WriteLine($"{item.Nome}: {item.Valor:C2}");
+                Console.WriteLine($"{item.Nome}: {item.Valor:C4}");
             }
             Console.WriteLine("-----------------------------------");
             Console.WriteLine("Despesas Adicionais:\n");
             foreach (var item in Despesa.despesasAdicionais)
             {
-                Console.WriteLine($"{item.Nome}: {item.Valor:C2}");
+                Console.WriteLine($"{item.Nome}: {item.Valor:C4}");
             }
             Console.WriteLine("-----------------------------------");
-            Console.WriteLine($"Reserva para o Caixa: \n{reservaCaixa:C2}\n");
+            Console.WriteLine($"Reserva para o Caixa: \n{reservaCaixa:C4}\n");
             Console.WriteLine("-----------------------------------");
             Console.WriteLine("Pagamento Funcionários:\n");
             foreach (var item in funcio)
             {
-                Console.WriteLine($"{item.Nome}: {item.Salario:C2}");
+                Console.WriteLine($"{item.Nome}: {item.Salario:C4}");
             }
             Console.WriteLine("-----------------------------------");
-            Console.WriteLine($"Total de Despesas: \n{despesasTotais:C2}\n");
+            Console.WriteLine($"Total de Despesas: \n{despesasTotais:C4}\n");
             Console.WriteLine("-----------------------------------");
             Console.WriteLine("Horas Totais por Sócio:\n");
             foreach (var item in socios)
@@ -169,20 +172,20 @@ namespace Gestao_Micro_Empresa
             }
             Console.WriteLine($"Total de {horasTotaisSocios}h  ");
             Console.WriteLine("-----------------------------------");
-            Console.Write($"Saldo Líquido: {saldoLiquido:C2}  \n");
+            Console.Write($"Saldo Líquido: {saldoLiquido:C4}  \n");
             Console.WriteLine("-----------------------------------");
-            Console.Write($"Valor por Hora: {valorPorHora:C2}\n");
+            Console.Write($"Valor por Hora: {valorPorHora:C4}\n");
             Console.WriteLine("-----------------------------------");
             Console.WriteLine("Salário dos Sócios: \n");
             foreach (var item in socios)
             {
-                Console.WriteLine($"{item.Nome}: {item.Salario:C2}");
+                Console.WriteLine($"{item.Nome}: {item.Salario:C4}");
             }
             Console.ReadKey();
             //
             //Salvando os dados obtidos em um arquivo de texto
             //
-            string caminho = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Resultados do mês");
+            string caminho = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "FATURAMENTO ESSENCIAL!");
             string dataFormatada = DateTime.Now.ToString("dd-MM-yyyy");
             string arquivo = $@"Fechamento {dataFormatada}.txt";
             string complete = Path.Combine(caminho, arquivo);
@@ -194,32 +197,33 @@ namespace Gestao_Micro_Empresa
             {
                 sw.WriteLine($"FECHAMENTO DO MÊS {DateTime.Now.ToShortDateString()}\n");
                 sw.WriteLine("Receitas:\n");
+                sw.WriteLine($"Rendimento de Juros até {DateTime.Now.ToShortDateString()}: {Juros:C4}");
                 foreach (var item in fornec)
                 {
-                    sw.WriteLine($"{item.Nome}: {item.Receita:C2}");
+                    sw.WriteLine($"{item.Nome}: {item.Receita:C4}");
                 }
                 sw.WriteLine("-----------------------------------");
                 sw.WriteLine("Despesas Fixas:\n");
                 foreach (var item in despesas)
                 {
-                    sw.WriteLine($"{item.Nome}: {item.Valor:C2}");
+                    sw.WriteLine($"{item.Nome}: {item.Valor:C4}");
                 }
                 sw.WriteLine("-----------------------------------");
                 sw.WriteLine("Despesas Adicionais:\n");
                 foreach (var item in Despesa.despesasAdicionais)
                 {
-                    sw.WriteLine($"{item.Nome}: {item.Valor:C2}");
+                    sw.WriteLine($"{item.Nome}: {item.Valor:C4}");
                 }
                 sw.WriteLine("-----------------------------------");
-                sw.WriteLine($"Reserva para o Caixa: \n{reservaCaixa:C2}\n");
+                sw.WriteLine($"Reserva para o Caixa: \n{reservaCaixa:C4}\n");
                 sw.WriteLine("-----------------------------------");
                 sw.WriteLine("Pagamento Funcionários:\n");
                 foreach (var item in funcio)
                 {
-                    sw.WriteLine($"{item.Nome}: {item.Salario:C2}");
+                    sw.WriteLine($"{item.Nome}: {item.Salario:C4}");
                 }
                 sw.WriteLine("-----------------------------------");
-                sw.WriteLine($"Total de Despesas: \n{despesasTotais:C2}\n");
+                sw.WriteLine($"Total de Despesas: \n{despesasTotais:C4}\n");
                 sw.WriteLine("-----------------------------------");
                 sw.WriteLine("Horas Totais por Sócio:\n");
                 foreach (var item in socios)
@@ -228,14 +232,14 @@ namespace Gestao_Micro_Empresa
                 }
                 sw.WriteLine($"Total de {horasTotaisSocios}h  ");
                 sw.WriteLine("-----------------------------------");
-                sw.Write($"Saldo Líquido: {saldoLiquido:C2}  \n");
+                sw.Write($"Saldo Líquido: {saldoLiquido:C4}  \n");
                 sw.WriteLine("-----------------------------------");
-                sw.Write($"Valor por Hora: {valorPorHora:C2}\n");
+                sw.Write($"Valor por Hora: {valorPorHora:C4}\n");
                 sw.WriteLine("-----------------------------------");
                 sw.WriteLine("Salário dos Sócios: \n");
                 foreach (var item in socios)
                 {
-                    sw.WriteLine($"{item.Nome}: {item.Salario:C2}");
+                    sw.WriteLine($"{item.Nome}: {item.Salario:C4}");
                 }
             }
 
