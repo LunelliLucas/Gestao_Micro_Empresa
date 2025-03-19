@@ -20,8 +20,8 @@ namespace Gestao_Micro_Empresa
                            List<Funcionario> funcio, List<Socio> socios);
         public static void Cabecalho(string? info)
         {
-                Console.WriteLine("Sistema de Gerenciamento Financeiro");
-                Console.WriteLine("-------------------------------------");
+                Console.WriteLine($"Sistema de Gerenciamento Financeiro - {SubMenus.NomeEmpresa}");
+                Console.WriteLine("------------------------------------------------------------------");
                 Console.WriteLine($"|{info}|\n");
         }
         public static void Serializacao<T>(string caminho, T t)
@@ -37,7 +37,7 @@ namespace Gestao_Micro_Empresa
         public static void Deserializacao()
         {
             string? diretorio = @"c:\Gerenciamento Financeiro\Cadastros";
-            string? dadosFuncionarios = @"c:\Gerenciamento Financeiro\Cadastros\fornecedores.json";
+            string? dadosFuncionarios = @"c:\Gerenciamento Financeiro\Cadastros\funcionarios.json";
             string? dadosFornecedores = @"c:\Gerenciamento Financeiro\Cadastros\fornecedores.json";
             string? dadosSocios = @"c:\Gerenciamento Financeiro\Cadastros\socios.json";
             string? dadosDespesasFixas = @"c:\Gerenciamento Financeiro\Cadastros\despesas_fixas.json";

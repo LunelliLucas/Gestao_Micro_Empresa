@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Channels;
 using System.Threading.Tasks;
@@ -10,8 +11,17 @@ namespace Gestao_Micro_Empresa
     public class FechamentoMes
     {
         public FechamentoMes() { }
-        public static decimal Juros { get; set; }
-        
+        protected static decimal Juros { get; set; }
+        protected static decimal Receitas { get; set; }
+        protected static decimal DespFixas { get; set; }
+        protected static decimal DespesasAdicionais { get; set; }
+        protected static decimal ReservaCaixa { get; set; }
+        protected static decimal PagFuncio { get; set; }
+        protected static decimal DespesasTotais { get; set; }
+        protected static decimal SaldoLiquido { get; set; }
+        protected static decimal HorasTotaisSocio { get; set; }
+        protected static decimal ValorPorHora { get; set; }
+
         public static decimal AddReceitas(List<Fornecedor> fornec)
         {
             Console.WriteLine("Adicione o valor das Receitas à seguir: \n");
@@ -79,10 +89,12 @@ namespace Gestao_Micro_Empresa
         public static decimal PagFuncionarios(List<Funcionario> funcio)
         {
             decimal totPag = 0m;
-            Console.WriteLine("\nPagamento funcionários:");
+            Console.WriteLine("\nPagamento funcionários:\n");
+            Console.WriteLine("Informe o Salário dos Funcionários à seguir:");
             foreach (var item in funcio)
             {
-                Console.WriteLine($"{item.Nome}: {item.Salario:C4}");
+                Console.Write($"\n{item.Nome}: ");
+                item.Salario = Convert.ToDecimal(Console.ReadLine());
                 totPag += item.Salario;
             }
             return totPag;
@@ -104,22 +116,22 @@ namespace Gestao_Micro_Empresa
         {
             ICadastros.Cabecalho("Receitas");
             //Entradas
-            var receitas = FechamentoMes.AddReceitas(fornec);
+            Receitas = FechamentoMes.AddReceitas(fornec);
             Console.Clear();
             ICadastros.Cabecalho("Despesas");
             //Saídas
-            var despFixas = FechamentoMes.AddDespesasFixas(despesas);
-            var despesasAdicionais = FechamentoMes.AddDespesasAdicionais();
-            var reservaCaixa = FechamentoMes.ValorReservaCaixa();
-            var pagFuncio = FechamentoMes.PagFuncionarios(funcio);
-            var despesasTotais = (despFixas + despesasAdicionais +
-                                           reservaCaixa + pagFuncio);
-            var saldoLiquido = receitas - despesasTotais;
-            var horasTotaisSocios = FechamentoMes.HorasTotaisSocios(socios);
-            var valorPorHora = 0m;
+            DespFixas = FechamentoMes.AddDespesasFixas(despesas);
+            DespesasAdicionais = FechamentoMes.AddDespesasAdicionais();
+            ReservaCaixa = FechamentoMes.ValorReservaCaixa();
+            PagFuncio = FechamentoMes.PagFuncionarios(funcio);
+            DespesasTotais = (DespFixas + DespesasAdicionais +
+                                           ReservaCaixa + PagFuncio);
+            SaldoLiquido = Receitas - DespesasTotais;
+            HorasTotaisSocio = FechamentoMes.HorasTotaisSocios(socios);
+            ValorPorHora = 0m;
             try
             {
-                valorPorHora = saldoLiquido / horasTotaisSocios;
+                ValorPorHora = SaldoLiquido / HorasTotaisSocio;
             }
             catch (DivideByZeroException)
             {
@@ -129,10 +141,15 @@ namespace Gestao_Micro_Empresa
             foreach (var item in socios)
             {
                 item.Salario = 0m;
-                item.Salario = item.HorasTrabalhadas * valorPorHora;
+                item.Salario = item.HorasTrabalhadas * ValorPorHora;
             }
             Console.Clear();
-            //Exibindo o resultado do Mês
+            
+        }
+        //Exibindo o resultado do Mês
+        public static void ExibirResultado(List<Fornecedor> fornec, List<Despesa> despesas,
+                                           List<Funcionario> funcio, List<Socio> socios)
+        {
             ICadastros.Cabecalho("Resultados do mês");
             Console.WriteLine("-----------------------------------");
             Console.WriteLine("Receitas:\n");
@@ -141,7 +158,7 @@ namespace Gestao_Micro_Empresa
             {
                 Console.WriteLine($"{item.Nome}: {item.Receita:C4}");
             }
-            Console.WriteLine($"Total: {receitas:C4}");
+            Console.WriteLine($"Total: {Receitas:C4}");
             Console.WriteLine("-----------------------------------");
             Console.WriteLine("Despesas Fixas:\n");
             foreach (var item in despesas)
@@ -155,7 +172,7 @@ namespace Gestao_Micro_Empresa
                 Console.WriteLine($"{item.Nome}: {item.Valor:C4}");
             }
             Console.WriteLine("-----------------------------------");
-            Console.WriteLine($"Reserva para o Caixa: \n{reservaCaixa:C4}\n");
+            Console.WriteLine($"Reserva para o Caixa: \n{ReservaCaixa:C4}\n");
             Console.WriteLine("-----------------------------------");
             Console.WriteLine("Pagamento Funcionários:\n");
             foreach (var item in funcio)
@@ -163,36 +180,107 @@ namespace Gestao_Micro_Empresa
                 Console.WriteLine($"{item.Nome}: {item.Salario:C4}");
             }
             Console.WriteLine("-----------------------------------");
-            Console.WriteLine($"Total de Despesas: \n{despesasTotais:C4}\n");
+            Console.WriteLine($"Total de Despesas: \n{DespesasTotais:C4}\n");
             Console.WriteLine("-----------------------------------");
             Console.WriteLine("Horas Totais por Sócio:\n");
             foreach (var item in socios)
             {
                 Console.WriteLine($"{item.Nome}: {item.HorasTrabalhadas}h");
             }
-            Console.WriteLine($"Total de {horasTotaisSocios}h  ");
+            Console.WriteLine($"Total de {HorasTotaisSocio}h  ");
             Console.WriteLine("-----------------------------------");
-            Console.Write($"Saldo Líquido: {saldoLiquido:C4}  \n");
+            Console.Write($"Saldo Líquido: {SaldoLiquido:C4}  \n");
             Console.WriteLine("-----------------------------------");
-            Console.Write($"Valor por Hora: {valorPorHora:C4}\n");
+            Console.Write($"Valor por Hora: {ValorPorHora:C4}\n");
             Console.WriteLine("-----------------------------------");
             Console.WriteLine("Salário dos Sócios: \n");
             foreach (var item in socios)
             {
                 Console.WriteLine($"{item.Nome}: {item.Salario:C4}");
             }
-            Console.ReadKey();
-            //
-            //Salvando os dados obtidos em um arquivo de texto
-            //
-            string caminho = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "FATURAMENTO ESSENCIAL!");
+            Console.WriteLine("!!ATENÇÃO!! Confira todos os dados acima.\n" +
+                "Caso houver algo incorreto, tecle \"1\" para corrigir.\n" +
+                "Se estiver tudo certo, tecle \"2\" para salvar os dados\n");
+            int resposta = Convert.ToInt16(Console.ReadLine());
+            if (resposta == 1)
+            {
+                AlterarDados(fornec, despesas, funcio, socios);
+            }
+            else
+            {
+                SalvarDados(fornec, despesas, funcio, socios);
+            }
+        }
+        //Alterando os dados incorretos quando solicitado
+        public static void AlterarDados(List<Fornecedor> fornec, List<Despesa> despesas,
+                                           List<Funcionario> funcio, List<Socio> socios)
+        {
+            ICadastros.Cabecalho("Alterar os Dados");
+            Console.WriteLine("Informe em qual parte os dados estão incorretos: ");
+            Console.WriteLine("[1]Receitas");
+            Console.WriteLine("[2]Despesas Fixas");
+            Console.WriteLine("[3]Despesas Adicionais");
+            Console.WriteLine("[4]Reserva para o Caixa");
+            Console.WriteLine("[5]Pagamento dos Funcionários");
+            Console.WriteLine("[6]Horas dos Sócios");
+            int resp = Convert.ToInt16(Console.ReadLine());
+
+            switch (resp)
+            {
+                case 1:
+                    Receitas = FechamentoMes.AddReceitas(fornec);
+                    break;
+                case 2:
+                    DespFixas = FechamentoMes.AddDespesasFixas(despesas);
+                    break;
+                case 3:
+                    DespesasAdicionais = FechamentoMes.AddDespesasAdicionais();
+                    break;
+                case 4:
+                    ReservaCaixa = FechamentoMes.ValorReservaCaixa();
+                    break;
+                case 5:
+                    PagFuncio = FechamentoMes.PagFuncionarios(funcio);
+                    break;
+                case 6:
+                    HorasTotaisSocio = FechamentoMes.HorasTotaisSocios(socios);
+                    break;
+                default:
+                    Console.WriteLine("Informe uma opção válida!");
+                    AlterarDados(fornec, despesas, funcio, socios);
+                    break;
+            }
+            DespesasTotais = (DespFixas + DespesasAdicionais +
+                                          ReservaCaixa + PagFuncio);
+            SaldoLiquido = Receitas - DespesasTotais;
+            ValorPorHora = 0m;
+            try
+            {
+                ValorPorHora = SaldoLiquido / HorasTotaisSocio;
+            }
+            catch (DivideByZeroException)
+            {
+                Console.WriteLine("Não Existe Divisão por Zero!!");
+            }
+            foreach (var item in socios)
+            {
+                item.Salario = 0m;
+                item.Salario = item.HorasTrabalhadas * ValorPorHora;
+            }
+            ExibirResultado(fornec, despesas, funcio, socios);
+        }
+        //Salvando os dados obtidos em um arquivo de texto
+        public static void SalvarDados(List<Fornecedor> fornec, List<Despesa> despesas,
+                                           List<Funcionario> funcio, List<Socio> socios)
+        {
+            string caminho = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), $"FATURAMENTO {SubMenus.NomeEmpresa}");
             string dataFormatada = DateTime.Now.ToString("dd-MM-yyyy");
             string arquivo = $@"Fechamento {dataFormatada}.txt";
             string complete = Path.Combine(caminho, arquivo);
-            
+
             if (!Directory.Exists(caminho))
                 Directory.CreateDirectory(caminho);
-            
+
             using (StreamWriter sw = new StreamWriter(complete))
             {
                 sw.WriteLine($"FECHAMENTO DO MÊS {DateTime.Now.ToShortDateString()}\n");
@@ -215,7 +303,7 @@ namespace Gestao_Micro_Empresa
                     sw.WriteLine($"{item.Nome}: {item.Valor:C4}");
                 }
                 sw.WriteLine("-----------------------------------");
-                sw.WriteLine($"Reserva para o Caixa: \n{reservaCaixa:C4}\n");
+                sw.WriteLine($"Reserva para o Caixa: \n{ReservaCaixa:C4}\n");
                 sw.WriteLine("-----------------------------------");
                 sw.WriteLine("Pagamento Funcionários:\n");
                 foreach (var item in funcio)
@@ -223,18 +311,18 @@ namespace Gestao_Micro_Empresa
                     sw.WriteLine($"{item.Nome}: {item.Salario:C4}");
                 }
                 sw.WriteLine("-----------------------------------");
-                sw.WriteLine($"Total de Despesas: \n{despesasTotais:C4}\n");
+                sw.WriteLine($"Total de Despesas: \n{DespesasTotais:C4}\n");
                 sw.WriteLine("-----------------------------------");
                 sw.WriteLine("Horas Totais por Sócio:\n");
                 foreach (var item in socios)
                 {
                     sw.WriteLine($"{item.Nome}: {item.HorasTrabalhadas}h");
                 }
-                sw.WriteLine($"Total de {horasTotaisSocios}h  ");
+                sw.WriteLine($"Total de {HorasTotaisSocio}h  ");
                 sw.WriteLine("-----------------------------------");
-                sw.Write($"Saldo Líquido: {saldoLiquido:C4}  \n");
+                sw.Write($"Saldo Líquido: {SaldoLiquido:C4}  \n");
                 sw.WriteLine("-----------------------------------");
-                sw.Write($"Valor por Hora: {valorPorHora:C4}\n");
+                sw.Write($"Valor por Hora: {ValorPorHora:C4}\n");
                 sw.WriteLine("-----------------------------------");
                 sw.WriteLine("Salário dos Sócios: \n");
                 foreach (var item in socios)
@@ -242,7 +330,6 @@ namespace Gestao_Micro_Empresa
                     sw.WriteLine($"{item.Nome}: {item.Salario:C4}");
                 }
             }
-
         }
     }
 }

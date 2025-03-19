@@ -56,8 +56,6 @@ namespace Gestao_Micro_Empresa
                 funci.Nome = Console.ReadLine();
                 Console.WriteLine("Informe o cargo do Funcionário: ");
                 funci.Cargo = Console.ReadLine();
-                Console.WriteLine("Informe o salário do Funcionário: ");
-                funci.Salario = Convert.ToDecimal(Console.ReadLine());
                 funcio.Add(funci);
                 Console.WriteLine("Funcionário(a) adicionado com sucesso!");
                 ICadastros.Serializacao(@"c:\Gerenciamento Financeiro\Cadastros\funcionarios.json", funcio);
@@ -87,8 +85,6 @@ namespace Gestao_Micro_Empresa
             funci.Nome = Console.ReadLine();
             Console.Write("Cargo: ");
             funci.Cargo = Console.ReadLine();
-            Console.Write("Salário: ");
-            funci.Salario = Convert.ToDecimal(Console.ReadLine());
             funcio.Insert(resp1, funci);
             Console.WriteLine("Dados atualizados com sucesso!");
             Task.Delay(1500).Wait();
@@ -102,7 +98,7 @@ namespace Gestao_Micro_Empresa
             int i = 0;
             foreach (var func in funcio)
             {
-                Console.WriteLine($"[{i}]{func.Nome}\t{func.Cargo}\t{func.Salario}");
+                Console.WriteLine($"[{i}]{func.Nome}\t{func.Cargo}");
                 i++;
             }
             int resp1 = Convert.ToInt16(Console.ReadLine());

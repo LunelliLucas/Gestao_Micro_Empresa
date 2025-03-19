@@ -9,6 +9,7 @@ namespace Gestao_Micro_Empresa
     public class SubMenus
     {
         public SubMenus() { }
+        public static string? NomeEmpresa { get; set; }
         public static void FechamentoDeMes(List<Fornecedor> fornec, List<Despesa> despesas,
                                            List<Funcionario> funcio, List<Socio> socios)
         {
@@ -60,12 +61,12 @@ namespace Gestao_Micro_Empresa
             }
             else
             {
-                Console.WriteLine("NOME\t\t\t\tCARGO\t\t\tSALÁRIO");
+                Console.WriteLine("NOME\t\t\t\tCARGO");
                 Console.WriteLine("-----------------------------------" +
-                                  "-----------------------------------");
+                                  "------------");
                 foreach (var i in funcionarios)
                 {
-                    Console.WriteLine($"{i.Nome}\t\t\t{i.Cargo}\t\t{i.Salario:C2}");
+                    Console.WriteLine($"{i.Nome}\t\t\t{i.Cargo}");
                 }
             }
             Console.WriteLine("\nPressione qualquer tecla para voltar..");
@@ -93,10 +94,11 @@ namespace Gestao_Micro_Empresa
             Console.ReadKey();
         }
 
-        public static void Cadastros(List<Fornecedor> fornec, List<Despesa> despesas,
+        public static async Task Cadastros(List<Fornecedor> fornec, List<Despesa> despesas,
                                      List<Funcionario> funcio, List<Socio> socios)
         {
             ICadastros.Cabecalho("Cadastros");
+            Console.WriteLine("[0]Minha Empresa");
             Console.WriteLine("[1]Fornecedores");
             Console.WriteLine("[2]Funcionários");
             Console.WriteLine("[3]Sócios");
@@ -105,6 +107,37 @@ namespace Gestao_Micro_Empresa
             int resp = Convert.ToInt16(Console.ReadLine());
             switch (resp)
             {
+                case 0:
+                    Console.Clear();
+                    if (string.IsNullOrEmpty(NomeEmpresa))
+                    {
+                        ICadastros.Cabecalho("Minha Empresa");
+                        Console.Write("Informe o nome da Empresa: ");
+                        NomeEmpresa = Console.ReadLine();
+                        ICadastros.Serializacao(@"c:\Gerenciamento Financeiro\Cadastros\minha_empresa.json", NomeEmpresa);
+                        Console.WriteLine("Nome da empresa cadastrado com sucesso!");
+                        Task.Delay(1500).Wait();
+                    }
+                    else
+                    {
+                        ICadastros.Cabecalho("Minha Empresa");
+                        Console.WriteLine($"Você quer alterar o nome da empresa {NomeEmpresa}? (Tecle \"1\" para \"SIM\" ou \"0\" para \"NÃO\")");
+                        int resposta = Convert.ToInt16(Console.ReadLine());
+                        Console.Clear();
+
+                        if (resposta == 1)
+                        {
+                            ICadastros.Cabecalho("Minha Empresa");
+                            Console.Write("Informe o nome da Empresa: ");
+                            NomeEmpresa = Console.ReadLine();
+                            ICadastros.Serializacao(@"c:\Gerenciamento Financeiro\Cadastros\minha_empresa.json", NomeEmpresa);
+                            Console.WriteLine("Nome da empresa alterado com sucesso!");
+                            Task.Delay(1500).Wait();
+                        }
+                        else if (resposta == 0)
+                            break;
+                    }
+                        break;
                 case 1:
                     Console.Clear();
                     var fornecedor = new Fornecedor();

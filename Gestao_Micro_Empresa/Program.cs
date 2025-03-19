@@ -12,21 +12,24 @@ string dadosFuncionarios = @"c:\Gerenciamento Financeiro\Cadastros\funcionarios.
 string dadosFornecedores = @"c:\Gerenciamento Financeiro\Cadastros\fornecedores.json";
 string dadosSocios = @"c:\Gerenciamento Financeiro\Cadastros\socios.json";
 string dadosDespesasFixas = @"c:\Gerenciamento Financeiro\Cadastros\despesas_fixas.json";
+string dadosMinhaEmpresa = @"c:\Gerenciamento Financeiro\Cadastros\minha_empresa.json";
 List<Funcionario> jsonFuncionarios = new();
 List<Fornecedor> jsonFornecedores = new();
 List<Socio> jsonSocios = new();
 List<Despesa> jsonDespesas = new();
+string jsonEmpresa;
 
 try
 {
     if (!File.Exists(dadosFornecedores) && !File.Exists(dadosFuncionarios) &&
-        !File.Exists(dadosSocios) && !File.Exists(dadosDespesasFixas))
+        !File.Exists(dadosSocios) && !File.Exists(dadosDespesasFixas) && !File.Exists(dadosMinhaEmpresa))
     {
         Directory.CreateDirectory(diretorio);
         File.Create(dadosFornecedores).Dispose();
         File.Create(dadosFuncionarios).Dispose();
         File.Create(dadosSocios).Dispose();
         File.Create(dadosDespesasFixas).Dispose();
+        File.Create(dadosMinhaEmpresa).Dispose();
     }
 
     if (new FileInfo(dadosFuncionarios).Length > 0)
@@ -48,6 +51,12 @@ try
     {
         var jsonFileDesp = File.ReadAllText(dadosDespesasFixas);
         jsonDespesas = JsonSerializer.Deserialize<List<Despesa>>(jsonFileDesp);
+    }
+    if (new FileInfo(dadosMinhaEmpresa).Length > 0)
+    {
+        var jsonFileEmpresa = File.ReadAllText(dadosMinhaEmpresa);
+        jsonEmpresa = JsonSerializer.Deserialize<string>(jsonFileEmpresa);
+        SubMenus.NomeEmpresa = jsonEmpresa;
     }
 }
 catch (Exception ex)
