@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Gestao_Micro_Empresa")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+521641ba14b0314f85bf5b36965986d41b3a7033")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f060e41ed560d9954a55244cb415f0d29057eeca")]
 [assembly: System.Reflection.AssemblyProductAttribute("Gestao_Micro_Empresa")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Gestao_Micro_Empresa")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

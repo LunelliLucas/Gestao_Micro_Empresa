@@ -144,7 +144,7 @@ namespace Gestao_Micro_Empresa
                 item.Salario = item.HorasTrabalhadas * ValorPorHora;
             }
             Console.Clear();
-            
+            ExibirResultado(fornec, despesas, funcio, socios);
         }
         //Exibindo o resultado do Mês
         public static void ExibirResultado(List<Fornecedor> fornec, List<Despesa> despesas,
@@ -209,12 +209,14 @@ namespace Gestao_Micro_Empresa
             else
             {
                 SalvarDados(fornec, despesas, funcio, socios);
+                Console.WriteLine("\nDados Salvos com Sucesso!");
             }
         }
         //Alterando os dados incorretos quando solicitado
         public static void AlterarDados(List<Fornecedor> fornec, List<Despesa> despesas,
                                            List<Funcionario> funcio, List<Socio> socios)
         {
+            Console.Clear();
             ICadastros.Cabecalho("Alterar os Dados");
             Console.WriteLine("Informe em qual parte os dados estão incorretos: ");
             Console.WriteLine("[1]Receitas");
@@ -283,52 +285,78 @@ namespace Gestao_Micro_Empresa
 
             using (StreamWriter sw = new StreamWriter(complete))
             {
-                sw.WriteLine($"FECHAMENTO DO MÊS {DateTime.Now.ToShortDateString()}\n");
-                sw.WriteLine("Receitas:\n");
-                sw.WriteLine($"Rendimento de Juros até {DateTime.Now.ToShortDateString()}: {Juros:C4}");
+                sw.WriteLine($"FECHAMENTO DO MÊS {DateTime.Now.ToShortDateString()}");
+                sw.WriteLine(new string('-', 80));
+                sw.WriteLine("DETALHES FINANCEIROS".PadRight(45) + "| RESUMO DOS SÓCIOS");
+                sw.WriteLine(new string('-', 80));
+
+                // Coluna esquerda: financeiro
+                List<string> colunaEsquerda = new List<string>();
+                decimal totalReceita = Juros + fornec.Sum(f => f.Receita);
+                decimal totalDespesasFixas = despesas.Sum(d => d.Valor);
+                decimal totalDespesasAdicionais = Despesa.despesasAdicionais.Sum(d => d.Valor);
+                decimal totalFuncionarios = funcio.Sum(f => f.Salario);
+
+                colunaEsquerda.Add("Receitas:");
+                colunaEsquerda.Add($"Juros até {DateTime.Now.ToShortDateString()}: {Juros:C4}");
                 foreach (var item in fornec)
-                {
-                    sw.WriteLine($"{item.Nome}: {item.Receita:C4}");
-                }
-                sw.WriteLine("-----------------------------------");
-                sw.WriteLine("Despesas Fixas:\n");
+                    colunaEsquerda.Add($"{item.Nome}: {item.Receita:C4}");
+                colunaEsquerda.Add($"TOTAL RECEITAS: {totalReceita:C4}");
+
+                colunaEsquerda.Add("-----------------------------------");
+                colunaEsquerda.Add("Despesas Fixas:");
                 foreach (var item in despesas)
-                {
-                    sw.WriteLine($"{item.Nome}: {item.Valor:C4}");
-                }
-                sw.WriteLine("-----------------------------------");
-                sw.WriteLine("Despesas Adicionais:\n");
+                    colunaEsquerda.Add($"{item.Nome}: {item.Valor:C4}");
+                colunaEsquerda.Add($"Total Fixas: {totalDespesasFixas:C4}");
+
+                colunaEsquerda.Add("-----------------------------------");
+                colunaEsquerda.Add("Despesas Adicionais:");
                 foreach (var item in Despesa.despesasAdicionais)
-                {
-                    sw.WriteLine($"{item.Nome}: {item.Valor:C4}");
-                }
-                sw.WriteLine("-----------------------------------");
-                sw.WriteLine($"Reserva para o Caixa: \n{ReservaCaixa:C4}\n");
-                sw.WriteLine("-----------------------------------");
-                sw.WriteLine("Pagamento Funcionários:\n");
+                    colunaEsquerda.Add($"{item.Nome}: {item.Valor:C4}");
+                colunaEsquerda.Add($"Total Adicionais: {totalDespesasAdicionais:C4}");
+
+                colunaEsquerda.Add("-----------------------------------");
+                colunaEsquerda.Add($"Reserva para o Caixa: {ReservaCaixa:C4}");
+                colunaEsquerda.Add("-----------------------------------");
+
+                colunaEsquerda.Add("Funcionários:");
                 foreach (var item in funcio)
-                {
-                    sw.WriteLine($"{item.Nome}: {item.Salario:C4}");
-                }
-                sw.WriteLine("-----------------------------------");
-                sw.WriteLine($"Total de Despesas: \n{DespesasTotais:C4}\n");
-                sw.WriteLine("-----------------------------------");
-                sw.WriteLine("Horas Totais por Sócio:\n");
+                    colunaEsquerda.Add($"{item.Nome}: {item.Salario:C4}");
+                colunaEsquerda.Add($"Total Funcionários: {totalFuncionarios:C4}");
+
+                colunaEsquerda.Add("-----------------------------------");
+                colunaEsquerda.Add($"TOTAL DESPESAS: {DespesasTotais:C4}");
+
+                // Coluna direita: sócios
+                List<string> colunaDireita = new List<string>();
+                colunaDireita.Add("Horas por Sócio:");
                 foreach (var item in socios)
-                {
-                    sw.WriteLine($"{item.Nome}: {item.HorasTrabalhadas}h");
-                }
-                sw.WriteLine($"Total de {HorasTotaisSocio}h  ");
-                sw.WriteLine("-----------------------------------");
-                sw.Write($"Saldo Líquido: {SaldoLiquido:C4}  \n");
-                sw.WriteLine("-----------------------------------");
-                sw.Write($"Valor por Hora: {ValorPorHora:C4}\n");
-                sw.WriteLine("-----------------------------------");
-                sw.WriteLine("Salário dos Sócios: \n");
+                    colunaDireita.Add($"{item.Nome}: {item.HorasTrabalhadas}h");
+                colunaDireita.Add($"Total de Horas: {HorasTotaisSocio}h");
+
+                colunaDireita.Add("-----------------------------------");
+                colunaDireita.Add($"Saldo Líquido: {SaldoLiquido:C4}");
+                colunaDireita.Add($"Valor por Hora: {ValorPorHora:C4}");
+
+                colunaDireita.Add("-----------------------------------");
+                decimal totalSalariosSocios = socios.Sum(s => s.Salario);
+                colunaDireita.Add("Salário dos Sócios:");
                 foreach (var item in socios)
+                    colunaDireita.Add($"{item.Nome}: {item.Salario:C4}");
+
+                // Descobre o maior tamanho
+                int maxLinhas = Math.Max(colunaEsquerda.Count, colunaDireita.Count);
+
+                // Escreve lado a lado (financeiro à esquerda, sócios à direita)
+                for (int i = 0; i < maxLinhas; i++)
                 {
-                    sw.WriteLine($"{item.Nome}: {item.Salario:C4}");
+                    string esq = i < colunaEsquerda.Count ? colunaEsquerda[i] : "";
+                    string dir = i < colunaDireita.Count ? colunaDireita[i] : "";
+
+                    sw.WriteLine(esq.PadRight(45) + "| " + dir);
                 }
+
+                sw.WriteLine(new string('-', 80));
             }
         }
     }
