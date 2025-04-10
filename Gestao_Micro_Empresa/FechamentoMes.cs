@@ -290,7 +290,6 @@ namespace Gestao_Micro_Empresa
                 sw.WriteLine("DETALHES FINANCEIROS".PadRight(45) + "| RESUMO DOS SÓCIOS");
                 sw.WriteLine(new string('-', 80));
 
-                // Coluna esquerda: financeiro
                 List<string> colunaEsquerda = new List<string>();
                 decimal totalReceita = Juros + fornec.Sum(f => f.Receita);
                 decimal totalDespesasFixas = despesas.Sum(d => d.Valor);
@@ -327,7 +326,6 @@ namespace Gestao_Micro_Empresa
                 colunaEsquerda.Add("-----------------------------------");
                 colunaEsquerda.Add($"TOTAL DESPESAS: {DespesasTotais:C4}");
 
-                // Coluna direita: sócios
                 List<string> colunaDireita = new List<string>();
                 colunaDireita.Add("Horas por Sócio:");
                 foreach (var item in socios)
@@ -344,10 +342,9 @@ namespace Gestao_Micro_Empresa
                 foreach (var item in socios)
                     colunaDireita.Add($"{item.Nome}: {item.Salario:C4}");
 
-                // Descobre o maior tamanho
                 int maxLinhas = Math.Max(colunaEsquerda.Count, colunaDireita.Count);
 
-                // Escreve lado a lado (financeiro à esquerda, sócios à direita)
+                
                 for (int i = 0; i < maxLinhas; i++)
                 {
                     string esq = i < colunaEsquerda.Count ? colunaEsquerda[i] : "";
